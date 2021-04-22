@@ -1,0 +1,40 @@
+.main{
+    margin: 0;
+    padding: 0;
+}
+section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #663399, #C71585);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 95vh;
+    background: #fff;
+    clip-path: polygon(100% 70%, 0 100%, 100% 100%);
+}
+h1{
+    color:whitesmoke;
+    font-weight: 500;
+    font-style:normal;
+    font-size: 10em;
+    text-shadow: 0 3px 3px black;
+    
+}
+.btn{
+    position: absolute;
+    width: 350px;
+    height: 7.5vh;
+    border-radius: 15px;
+    top: 90%;
+    font-size: large;
+}
