@@ -1,1 +1,73 @@
-<p>login-page works!</p>
+<!-- <p>login-page works!</p> -->
+<div  class="main">
+    <div class="form-container" mat-card>
+        <mat-tab-group style="width: 80%; display: flex; align-items: center;">
+            <mat-tab label="Sign-In"  style="display: block; align-items: center; justify-items: center;">
+                
+                <br>
+                <mat-form-field class="f-field">
+                    <mat-label>Enter registered email</mat-label>
+                    <input matInput placeholder="smith@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="f-field">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide? 'password':'text'" [formControl]="password">
+                    <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide?'visibility_off':'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="password.invalid">{{getpasswordErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <br>
+                
+                <div class="f-field" style="display:flex; align-items: center;">
+                    <button mat-raised-button color="primary" [disabled]="email.invalid || password.invalid" style="border-radius: 10px; width:10vw">LOGIN</button>
+                </div>
+                
+                
+            </mat-tab>
+            <mat-tab label="Register" style="display: block; align-items: center; justify-items: center;">
+                <br>
+                <mat-form-field class="f-field">
+                    <mat-label>Enter email</mat-label>
+                    <input matInput placeholder="smith@example.com" [formControl]="registerEmail" required>
+                    <mat-error *ngIf="registerEmail.invalid">{{getRegisterEmailError()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="f-field">
+                    <mat-label>Set Password</mat-label>
+                    <input matInput [type]="hide1? 'password':'text'" [formControl]="registerpassword">
+                    <button mat-icon-button matSuffix (click)="hide1=!hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                        <mat-icon>{{hide1?'visibility_off':'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="password.invalid">{{getRegisterPasswordErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="f-field">
+                    <mat-label>Enter Password Again</mat-label>
+                    <input matInput [type]="hide2? 'password':'text'" [formControl]="registerpasswordAgain">
+                    <button mat-icon-button matSuffix (click)="hide2=!hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                        <mat-icon>{{hide2?'visibility_off':'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="password.invalid">{{getRegisterPasswordAgainErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <div class="f-field" style="display:flex; align-items: center;">
+                    <button mat-raised-button color="accent" [disabled]="registerEmail.invalid || registerpassword.invalid || registerpasswordAgain.invalid" style="border-radius: 10px; width:10vw">REGISTER</button>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+        
+            
+        <div class="icons">
+                <!-- <p>Sign in using :</p> -->
+            <span style="font-weight: 500;">OR sign-in using :</span>
+            <span><button mat-fab color="warn"><i class="fab fa-google fa-lg"></i></button></span>
+            <span><button mat-fab color="primary"><i class="fab fa-linkedin fa-lg"></i></button></span>
+            <span><button mat-fab color="accent"><i class="fab fa-github-square fa-2x"></i></button></span>
+        </div>
+
+        
+    </div>
+</div>

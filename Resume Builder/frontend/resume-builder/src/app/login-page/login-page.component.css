@@ -1,0 +1,60 @@
+.main{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(45deg, purple, teal);
+    /* background: linear-gradient(45deg, #3a243b, #FFBF00); */
+    /* background-color: #3a243b; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    /* position: absolute; */
+    position: relative;
+    width: 40vw;
+    height: 60vh;
+    /* top: 25%; 
+    left: 30vw;  */
+    border-radius: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    border: 3px solid yellow;
+    
+    /* align-items: center; */
+}
+
+.tb{
+    display: block;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
+.f-field{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.icons{
+    position: absolute;
+    top: 85%;
+    left: 12.5%;
+    width: 30vw;
+    height: 10vh;
+    display: inline-block;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+
+}
+span{
+    margin-left: 4px;
+    margin-right: 4px;
+
+}
