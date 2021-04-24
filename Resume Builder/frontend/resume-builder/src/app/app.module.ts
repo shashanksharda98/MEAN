@@ -11,15 +11,21 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule } from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DetailspageComponent } from './detailspage/detailspage.component';
+import { PreviewComponent } from './preview/preview.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DetailspageComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MatCardModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

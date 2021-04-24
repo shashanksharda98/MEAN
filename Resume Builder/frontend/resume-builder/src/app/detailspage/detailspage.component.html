@@ -1,0 +1,15 @@
+<!-- <p>detailspage works!</p> -->
+<div class="main">
+    <mat-toolbar color="primary">
+        <span>Resume Builder</span>
+        <span class="spacer"></span>
+        <button mat-icon-button><mat-icon>save</mat-icon></button>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</div>
