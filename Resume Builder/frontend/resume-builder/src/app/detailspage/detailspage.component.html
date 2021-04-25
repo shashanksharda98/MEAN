@@ -3,13 +3,81 @@
     <mat-toolbar color="primary">
         <span>Resume Builder</span>
         <span class="spacer"></span>
-        <button mat-icon-button><mat-icon>save</mat-icon></button>
+        <button mat-icon-button><mat-icon>download</mat-icon></button>
         <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
         <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+            <mat-divider></mat-divider>
             <button mat-menu-item>
                 <mat-icon>logout</mat-icon>
                 <span>Logout</span>
             </button>
         </mat-menu>
     </mat-toolbar>
+    
+    <mat-drawer-container class="bottom-container" [hasBackdrop]="false">
+        <!-- div for adding details -->
+        <mat-drawer #drawer mode="push">
+            <h4>Templates</h4>
+        </mat-drawer>
+        
+        <mat-card class="details-container">
+            <h3>Fill in your details</h3>
+            <mat-vertical-stepper [linear]="false" #stepper>
+
+                <mat-step [stepControl]="">
+                    <form [formGroup]="">
+                        <ng-template matStepLabel><mat-icon>book</mat-icon>Select a template</ng-template>
+                        <button mat-raised-button color="accent" (click)="drawer.toggle()">Click to select a template</button>
+                    </form>
+                    <div>
+                        <button mat-raised-button matStepperNext color="warn">Next</button>
+                    </div>
+                </mat-step>
+
+                <mat-step [stepControl]="">
+                    <form [formGroup]="">
+                        <ng-template matStepLabel><mat-icon>person</mat-icon>Personal Details</ng-template>
+                    </form>
+                    <div>
+                        <button mat-raised-button matStepperPrevious color="warn">Previous</button>
+                        <button mat-raised-button matStepperNext color="warn">Next</button>
+                    </div>
+                </mat-step>
+
+                <mat-step [stepControl]="">
+                    <form [formGroup]="">
+                        <ng-template matStepLabel><mat-icon>school</mat-icon>Education Details</ng-template>
+                    </form>
+                    <div>
+                        <button mat-raised-button matStepperPrevious color="warn">Previous</button>
+                        <button mat-raised-button matStepperNext color="warn">Next</button>
+                    </div>
+                </mat-step>
+
+                <mat-step [stepControl]="">
+                    <form [formGroup]="">
+                        <ng-template matStepLabel><mat-icon>work</mat-icon>Work</ng-template>
+                    </form>
+                    <div>
+                        <button mat-raised-button matStepperPrevious color="warn">Previous</button>
+                    </div>
+                </mat-step>
+
+            </mat-vertical-stepper>
+        </mat-card>
+        <!-- *********************************** -->
+        <!-- <mat-divider [vertical]="true" style="border-left: 4px; border-right: 4px;"></mat-divider> -->
+        <!-- preview -->
+        <mat-card class="preview">
+
+        </mat-card>
+    </mat-drawer-container>
 </div>
+
+
+   
+

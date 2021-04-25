@@ -14,9 +14,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DetailspageComponent } from './detailspage/detailspage.component';
 import { PreviewComponent } from './preview/preview.component';
+
+
 
 
 @NgModule({
@@ -40,7 +45,10 @@ import { PreviewComponent } from './preview/preview.component';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule,
+    MatStepperModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
