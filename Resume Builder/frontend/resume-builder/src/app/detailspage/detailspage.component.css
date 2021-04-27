@@ -17,14 +17,28 @@
     left: 1%;
     top: 2%;
     width: 52vw;
-    height: 84vh;
-    
-    
-    
+    height: 84vh;   
+    overflow: auto;
 }
 .bottom-container{
     position: relative;
     width: 100vw;
     background-color: aqua;
     height: 91vh;
+}
+.img-container .btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.f-field{
+    margin: 5px 5px 5px 5px;
+    width: 100%;
+}
+.form-group{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
 }

@@ -21,7 +21,14 @@
     <mat-drawer-container class="bottom-container" [hasBackdrop]="false">
         <!-- div for adding details -->
         <mat-drawer #drawer mode="push">
-            <h4>Templates</h4>
+            <h4 style="position: relative; left: 40%;">Templates</h4>
+            <div class="template-container">
+                <div *ngFor="let o of skincd" class="img-container" style="position: relative;width: 400px;height: auto; display: flex; justify-content: center; flex-direction: column; margin-top: 10px;margin-left: 5px;">
+                    <img mat-card-image src="../assets/images/{{o}}.svg">
+                    <button mat-raised-button class="btn" color="primary" value={{o}}>Use Template</button>
+                </div>
+                
+            </div>
         </mat-drawer>
         
         <mat-card class="details-container">
@@ -34,23 +41,186 @@
                         <button mat-raised-button color="accent" (click)="drawer.toggle()">Click to select a template</button>
                     </form>
                     <div>
-                        <button mat-raised-button matStepperNext color="warn">Next</button>
+                        <button class="f-field" mat-raised-button matStepperNext color="warn">Next</button>
                     </div>
                 </mat-step>
 
                 <mat-step [stepControl]="">
                     <form [formGroup]="">
                         <ng-template matStepLabel><mat-icon>person</mat-icon>Personal Details</ng-template>
+                        <div class="form-group">
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>First Name</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+                            
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="form-group">
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Professional Summary</mat-label>
+                                <input matInput type="text" maxlength="150" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Phone</mat-label>
+                                <input matInput type="tel" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Profession</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Street</mat-label>
+                                <input matInput [formControlName]="" required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>City</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>State</mat-label>
+                                <input matInput [formControlName]="" required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Country</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Pin Code</mat-label>
+                                <input matInput type="number" [formControlName]="" required>
+                            </mat-form-field>
+                        </div>
+
+
                     </form>
                     <div>
-                        <button mat-raised-button matStepperPrevious color="warn">Previous</button>
-                        <button mat-raised-button matStepperNext color="warn">Next</button>
+                        <button class="f-field" mat-raised-button matStepperPrevious color="warn">Previous</button>
+                        <button class="f-field" mat-raised-button matStepperNext color="warn">Next</button>
                     </div>
                 </mat-step>
 
                 <mat-step [stepControl]="">
                     <form [formGroup]="">
                         <ng-template matStepLabel><mat-icon>school</mat-icon>Education Details</ng-template>
+                        
+                        
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>School Name(Class 10)</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>%age/CGPA</mat-label>
+                                <input matInput type="number" [formControlName]="" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Passing Year</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let i of y;let c = index" [value]="i" [formControlName]="">
+                                        {{c+this.yr}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>School Name(Class 12)</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>%age/CGPA</mat-label>
+                                <input matInput type="number" [formControlName]="" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Passing Year</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let i of y;let c = index" [value]="i" [formControlName]="">
+                                        {{c+this.yr}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>College Name</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>%age/CGPA</mat-label>
+                                <input matInput type="number" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>Graduation Year</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let i of y;let c = index" [value]="i" [formControlName]="">
+                                        {{c+this.yr}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+
+                            <mat-form-field class="f-field" appearance="fill">
+                                <mat-label>City/State</mat-label>
+                                <input matInput type="text" [formControlName]="" required>
+                                <mat-error *ngIf=""></mat-error>
+                            </mat-form-field>
+                        </div>
                     </form>
                     <div>
                         <button mat-raised-button matStepperPrevious color="warn">Previous</button>
@@ -61,6 +231,11 @@
                 <mat-step [stepControl]="">
                     <form [formGroup]="">
                         <ng-template matStepLabel><mat-icon>work</mat-icon>Work</ng-template>
+                        
+                        <div class="form-group">
+
+                        </div>
+
                     </form>
                     <div>
                         <button mat-raised-button matStepperPrevious color="warn">Previous</button>

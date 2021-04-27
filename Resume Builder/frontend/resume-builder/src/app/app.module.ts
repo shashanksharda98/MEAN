@@ -17,6 +17,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatNativeDateModule } from '@angular/material/core';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DetailspageComponent } from './detailspage/detailspage.component';
 import { PreviewComponent } from './preview/preview.component';
@@ -48,7 +52,11 @@ import { PreviewComponent } from './preview/preview.component';
     MatMenuModule,
     MatDividerModule,
     MatStepperModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
